@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 
 def main():
-    crypto_keywords = load_crypto_keywords('top-50.csv')
-    texts, labels = load_data('crypto-processed.csv')
+    crypto_keywords = load_crypto_keywords('../../data/top-50.csv')
+    texts, labels = load_data('../../data/crypto-processed.csv')
     keyword_extractor = initialize_yake()
     processed_texts = []
     direct_match_labels = []
