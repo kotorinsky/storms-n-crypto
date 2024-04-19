@@ -10,6 +10,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score, classification_report
 import yake
+import joblib  # Add at the beginning
+
+
 
 # Download necessary NLTK modules
 nltk.download('punkt')  # Tokenizers
@@ -82,6 +85,9 @@ def build_model():
     ])
     return pipeline
 
+def save_model(model, filename):
+    joblib.dump(model, filename)  # Save the model to disk
+
 def main():
     crypto_keywords = load_crypto_keywords('data/top-50.csv')
     texts, labels = load_data('data/tweets-from-influentials-process.csv')
@@ -97,6 +103,7 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(processed_texts, labels, test_size=0.2, random_state=42)
     model = build_model()
     model.fit(X_train, y_train)  # Train the model
+    save_model(model, 'trained_model.joblib')
     predictions = model.predict(X_test)  # Predict on the test set
     print('Accuracy:', accuracy_score(y_test, predictions))
     print('Classification Report:\n', classification_report(y_test, predictions))
