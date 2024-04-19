@@ -8,9 +8,8 @@ pip install -r requirements.txt
 
 ## Data tagging 
 ### Tag crypto tweets
-We used Chatgpt to help tag if a tweet is crypto related.
-1. Set your your open ai api key in .env file
-.env
+We used ChatGpt to help tag if a tweet is crypto related.
+1. Set your your open ai api key in `.env` file
 ```
 OPEN_AI_API_KEY=your-api-key
 ```
@@ -18,3 +17,4 @@ OPEN_AI_API_KEY=your-api-key
 ```
 $ python process/crypto-relatedness-tagging.py
 ```
+A `data/tweets-from-influentials.csv` will be generated after.
