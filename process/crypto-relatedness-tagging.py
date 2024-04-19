@@ -101,18 +101,18 @@ def process_data(df):
 if __name__ == '__main__':
     directory = 'data/tweets-from-influentials/'
     all_dfs = []
-
+    tweets_each_person = 500
     # For each CSV file in the directory
     for filename in os.listdir(directory):
         # Only process csv files
         if filename.endswith('.csv'):
             df = read_and_clean_data(os.path.join(directory, filename))
-            df = df.iloc[0:1]
+            df = df.iloc[0:tweets_each_person]
             df = df.drop('created_at', axis=1)
             df = df.drop('id', axis=1)
             all_dfs.append(df)
 
     tweets = pd.concat(all_dfs, ignore_index=True)
-    print('Total number of tweets:', len(tweets))
+    print('Total number of tweets to tag:', len(tweets))
     df = process_data(tweets)
     df.to_csv('data/tweets-from-influentials.csv', index=False)
