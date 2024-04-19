@@ -5,7 +5,7 @@ from train import build_model
 
 def test_elon():
     crypto_keywords = load_crypto_keywords('../../data/top-50.csv')
-    texts, labels = load_data('../../data/crypto-processed.csv')
+    texts, labels = load_data('../../data/tweets-from-influentials-process.csv')
     keyword_extractor = initialize_yake()
     processed_texts = []
     direct_match_labels = []
