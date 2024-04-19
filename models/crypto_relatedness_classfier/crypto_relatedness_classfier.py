@@ -83,8 +83,8 @@ def build_model():
     return pipeline
 
 def main():
-    crypto_keywords = load_crypto_keywords('../../data/top-50.csv')
-    texts, labels = load_data('../../data/tweets-from-influentials-process.csv')
+    crypto_keywords = load_crypto_keywords('data/top-50.csv')
+    texts, labels = load_data('data/tweets-from-influentials-process.csv')
     keyword_extractor = initialize_yake()
     processed_texts = []
     direct_match_labels = []
@@ -101,7 +101,7 @@ def main():
     print('Accuracy:', accuracy_score(y_test, predictions))
     print('Classification Report:\n', classification_report(y_test, predictions))
 
-    additional_data = load_additional_data('../../data/elon-csv-cleaned.csv')
+    additional_data = load_additional_data('data/elon-csv-cleaned.csv')
     additional_processed_data = []
     additional_direct_labels = []
     for text in additional_data:

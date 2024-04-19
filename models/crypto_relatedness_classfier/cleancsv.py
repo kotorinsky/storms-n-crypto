@@ -2,7 +2,7 @@ import pandas as pd
 import re
 
 # 读取CSV文件
-df = pd.read_csv('../../data/crypto-without-unknown.csv')
+df = pd.read_csv('data/crypto-without-unknown.csv')
 
 # 打印列名，以确认正确的列名
 print("列名：", df.columns)
@@ -25,4 +25,4 @@ df['text'] = df['text'].apply(preprocess_text)
 print(df.head())
 
 # 保存处理后的DataFrame回CSV
-df.to_csv('../../data/tweets-from-influentials-process.csv', index=False)
+df.to_csv('data/tweets-from-influentials-process.csv', index=False)
