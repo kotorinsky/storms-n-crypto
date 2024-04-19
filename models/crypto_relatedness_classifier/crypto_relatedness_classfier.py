@@ -93,7 +93,8 @@ def save_model(model, directory, filename):
 
 def main():
     crypto_keywords = load_crypto_keywords('data/top-50.csv')
-    texts, labels = load_data('data/tweets-from-influentials-process.csv')
+    #texts, labels = load_data('data/tweets-from-influentials-process.csv')
+    texts, labels = load_data('data/tweets-from-influentials.csv')
     keyword_extractor = initialize_yake()
     processed_texts = []
     direct_match_labels = []
@@ -105,9 +106,12 @@ def main():
     # Split the dataset into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(processed_texts, labels, test_size=0.2, random_state=42)
     model = build_model()
-    model.fit(X_train, y_train)  # Train the model
+    model.fit(X_train, y_train)  # Train the model 
     model_directory = 'models/crypto_relatedness_classifier'  
-    save_model(model, model_directory, 'trained_model.joblib') 
+    #save_model(model, model_directory, 'trained_model1.joblib') 
+    save_model(model, model_directory, 'trained_model2.joblib') 
+
+
     predictions = model.predict(X_test)  # Predict on the test set
     print('Accuracy:', accuracy_score(y_test, predictions))
     print('Classification Report:\n', classification_report(y_test, predictions))
