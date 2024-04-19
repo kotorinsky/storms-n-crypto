@@ -20,7 +20,7 @@ def predict(model, text):
     return prediction[0]
 
 if __name__ == '__main__':
-    model_filename = 'trained_model.joblib'
+    model_filename = 'models/crypto_relatedness_classifier/trained_model.joblib'
     model = load_model(model_filename)
     
     print("Please input text for prediction:")
