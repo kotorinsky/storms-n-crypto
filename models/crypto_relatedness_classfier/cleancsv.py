@@ -1,28 +1,28 @@
 import pandas as pd
 import re
 
-# 读取CSV文件
+# read csv
 df = pd.read_csv('data/crypto-without-unknown.csv')
 
-# 打印列名，以确认正确的列名
+# Print the column name to confirm the correct column name
 print("列名：", df.columns)
 
-# 定义一个函数用于预处理文本
+# Define a function for preprocessing text
 def preprocess_text(text):
-    # 确保文本是字符串
+    # Make sure the text is a string
     if pd.isnull(text):
         return ""
-    # 移除URLs
+    # Remove URLs
     text = re.sub(r'http[s]?://\S+', '', text)
-    # 移除@提及的文本
+    # Remove text mentioned by @
     text = re.sub(r'@\S+', '', text)
     return text
 
-# 使用正确的列名'text'来处理数据
+# Use the correct column name 'text' to process the data
 df['text'] = df['text'].apply(preprocess_text)
 
-# 显示预处理后的数据
+# The pre-processed data is displayed
 print(df.head())
 
-# 保存处理后的DataFrame回CSV
+# Save the processed DataFrame back to CSV
 df.to_csv('data/tweets-from-influentials-process.csv', index=False)
