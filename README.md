@@ -6,8 +6,9 @@ Install the required dependencies
 pip install -r requirements.txt
 ```
 
-## Data tagging
-### Tag crypto tweets
+## Data tagging 
+This section is optional as the tagged data are already in `data/`
+### Tag crypto relatedness
 We used ChatGPT to label the dataset on if a tweet is crypto related.
 1. Set your your open ai api key in `.env` file
 ```
@@ -18,6 +19,18 @@ OPEN_AI_API_KEY=your-api-key
 $ python process/crypto-relatedness-tagging.py
 ```
 A `data/tweets-from-influentials.csv` will be generated after.
+
+### Tag price impact
+```
+# Unzip the price data
+!unzip "data/btc-prices/*.zip" -d "data/btc-prices/"
+```
+The taggings script supports any csv data with a `Timestamp` column. 
+
+```
+# tag data/elonmusk.csv and save to data/elon-tweets-with-price.csv
+python process/price-impact-tagging.py data/elonmusk.csv data/elon-tweets-with-price.csv 
+```
 
 ## Crypto Relatedness Classifier
 
