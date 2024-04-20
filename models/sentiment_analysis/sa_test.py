@@ -72,9 +72,9 @@ class SentimentAnalysisModel:
         y_pred = self.model(torch.from_numpy(x), [length])
         y = torch.argmax(y_pred, dim=1)
         if y == 0:
-            return 'negative'
+            return 'Negative'
         elif y == 1:
-            return 'positive'
+            return 'Positive'
         else:
             return 'error'
         
