@@ -8,12 +8,12 @@ pip install -r requirements.txt
 
 ## Data tagging
 ### Tag crypto tweets
-We used ChatGpt to help tag if a tweet is crypto related.
+We used ChatGPT to label the dataset on if a tweet is crypto related.
 1. Set your your open ai api key in `.env` file
 ```
 OPEN_AI_API_KEY=your-api-key
 ```
-2.
+2. Run the script to generate the labels.
 ```
 $ python process/crypto-relatedness-tagging.py
 ```
@@ -39,7 +39,7 @@ Files overview of the Crypto Relatedness Classifier model implementation under `
 
 ## Sentiment Analysis
 
-Download the sentiment140 dataset
+Download the sentiment140 dataset used for training and evaluation
 ```
 wget -P data/ https://www.kaggle.com/datasets/kazanova/sentiment140/download?datasetVersionNumber=2
 ```
