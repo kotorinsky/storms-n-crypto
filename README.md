@@ -39,9 +39,14 @@ Files overview of the Crypto Relatedness Classifier model implementation under `
 
 ## Sentiment Analysis
 
+Download the sentiment140 dataset
+```
+wget -P data/ https://www.kaggle.com/datasets/kazanova/sentiment140/download?datasetVersionNumber=2
+```
+
 Files overview of the Sentiment Analysis model implementation under `models/sentiment_analysis`:
 
-1. `analyse_sentiment104_dataset.ipynb`: analyse the data distribution of the sentiment104 dataset used for training.
+1. `analyse_sentiment104_dataset.ipynb`: analyse the data distribution of the sentiment140 dataset used for training.
 2. `sentiment_analysis_w_lr_n_embedding.ipynb`: experiment the Logistic Regression model using NLKL pretrained word embedding.
 3. `sentiment_analysis_w_lr.ipynb`: Sentiment Analysis using Logistic Regression and TF-IDF.
 4. `sentiment_analysis_w_lstm.ipynb`: Sentiment Analysis using LSTM and NLKL pretrained word embedding.
