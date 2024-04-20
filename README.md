@@ -22,29 +22,18 @@ A `data/tweets-from-influentials.csv` will be generated after.
 
 ## Crypto Relatedness Classifier
 
-The structure is shown in the following figure:
-
+The architecture of the Crypto Relatedness Classifier is shown in the following figure:
 ![alt text](README.assets/crypto_relatedness_classfier.png)
 
-
-
-`crypto_relatedness_classfier.py`  full version of the crypto relatedness classifier
-
-`cleancsv.py`   Determine if the data contains links (mostly advertisements) or @related content and remove them from the text
-
-`readcsv.py`         csv file reading
-
-`preceed.py`        data preprocessing
-
-`run.py`                model training and save the model file to local, and output the test results
-
-`test_Elon.py`      Test the model on a dataset of Elon Musk's tweets
-
-`test_model.py`   User-defined input strings are supported. The system determines whether the input strings are related to cryptocurrency
-
-`trained_model1.joblib`  Models trained against tweets-from-influentials-process.csv
-
-`trained_model2.joblib`  Models trained against tweets-from-influentials.csv
+1. `crypto_relatedness_classfier.py`: full version of the crypto relatedness classifier
+2. `cleancsv.py`: determine if the data contains links (mostly advertisements) or @related content and remove them from the text
+3. `readcsv.py`: csv file reading
+4. `preceed.py`: data preprocessing
+5. `run.py`: model training and save the model file to local, and output the test results
+6. `test_Elon.py`: test the model on a dataset of Elon Musk's tweets
+7. `test_model.py`: user-defined input strings are supported. The system determines whether the input strings are related to cryptocurrency
+8. `trained_model1.joblib`: Models trained against tweets-from-influentials-process.csv
+9. `trained_model2.joblib`: Models trained against tweets-from-influentials.csv
 
 ## Sentiment Analysis
 1. `analyse_sentiment104_dataset.ipynb`: analyse the data distribution of the sentiment104 dataset used for training.
