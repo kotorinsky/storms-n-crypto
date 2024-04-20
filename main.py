@@ -1,10 +1,16 @@
+from models.sentiment_analysis.sa_test import SentimentAnalysisModel
+
 def predict_is_crypto_related(tweet):
     # Placeholder function for predicting if a tweet is crypto-related
     return 'bitcoin' in tweet.lower()
 
 def predict_sentiment(tweet):
     # Placeholder function for predicting the sentiment of a tweet
-    return "Positive"  # Placeholder sentiment
+    s_model = SentimentAnalysisModel()
+    return s_model.sentiment_analysis(tweet)  # Placeholder sentiment
+
+
+
 
 if __name__ == "__main__":
     tweets = [
