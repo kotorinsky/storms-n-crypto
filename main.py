@@ -1,8 +1,31 @@
 from models.sentiment_analysis.sa_test import SentimentAnalysisModel
+from models.crypto_relatedness_classifier.test_model import load_model
+from models.crypto_relatedness_classifier.test_model import load_crypto_keywords
+from models.crypto_relatedness_classifier.test_model import preprocess_input
+from models.crypto_relatedness_classifier.test_model import predict
+from models.crypto_relatedness_classifier.test_model import check_keywords
+
 
 def predict_is_crypto_related(tweet):
     # Placeholder function for predicting if a tweet is crypto-related
-    return 'bitcoin' in tweet.lower()
+    model_filename = 'models/crypto_relatedness_classifier/trained_model2.joblib'
+    model = load_model(model_filename)
+    crypto_keywords = load_crypto_keywords('data/top-50.csv')
+    #print("Please input text for prediction:")
+    #input_text = input()  # Use input() to get text from the user after the script starts running
+    input_text = tweet
+    result = check_keywords(input_text, crypto_keywords)
+    
+    if result == 1:
+        return 'is related to bitcoin' in tweet.lower()
+    else:
+        result = predict(model, input_text)
+        if result == 1:
+            return 'is related to bitcoin' in tweet.lower()
+        else:
+            return 'not related to bitcoin' in tweet.lower()
+        #print(f"Prediction for input '{input_text}': {result}")
+    #return 'bitcoin' in tweet.lower()
 
 def predict_sentiment(tweet):
     # Placeholder function for predicting the sentiment of a tweet
