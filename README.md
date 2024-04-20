@@ -6,6 +6,22 @@ Install the required dependencies
 pip install -r requirements.txt
 ```
 
+## Use pre-trained models for classification 
+We have provided an example main.py that demonstrates how our models can classify tweets. The toy example program includes historical tweets from Elon Musk that had significant price impacts on cryptocurrency.
+```
+$ python main.py
+```
+
+### Example Output
+After running main.py, you can expect to see output similar to the following, displaying details of a specific tweet, its classification, sentiment analysis, and a suggested action based on the analysis.
+```
+Tweet: You can now buy a Tesla with bitcoin
+Is Crypto Related: True
+Sentiment: Positive
+Action: Buy that crypto rocket ship! 🚀
+```
+
+
 ## Data tagging 
 This section is optional as the tagged data are already in `data/`
 ### Tag crypto relatedness
