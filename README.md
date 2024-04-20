@@ -19,11 +19,13 @@ $ python process/crypto-relatedness-tagging.py
 ```
 A `data/tweets-from-influentials.csv` will be generated after.
 
-
 ## Crypto Relatedness Classifier
 
 The architecture of the Crypto Relatedness Classifier is shown in the following figure:
+
 ![alt text](README.assets/crypto_relatedness_classfier.png)
+
+Files overview of the Crypto Relatedness Classifier model implementation under `models/crypto_relatedness_classifier`:
 
 1. `crypto_relatedness_classfier.py`: full version of the crypto relatedness classifier
 2. `cleancsv.py`: determine if the data contains links (mostly advertisements) or @related content and remove them from the text
@@ -36,12 +38,10 @@ The architecture of the Crypto Relatedness Classifier is shown in the following 
 9. `trained_model2.joblib`: Models trained against tweets-from-influentials.csv
 
 ## Sentiment Analysis
+
+Files overview of the Sentiment Analysis model implementation under `models/sentiment_analysis`:
+
 1. `analyse_sentiment104_dataset.ipynb`: analyse the data distribution of the sentiment104 dataset used for training.
 2. `sentiment_analysis_w_lr_n_embedding.ipynb`: experiment the Logistic Regression model using NLKL pretrained word embedding.
 3. `sentiment_analysis_w_lr.ipynb`: Sentiment Analysis using Logistic Regression and TF-IDF.
 4. `sentiment_analysis_w_lstm.ipynb`: Sentiment Analysis using LSTM and NLKL pretrained word embedding.
-
-
-
-
-
