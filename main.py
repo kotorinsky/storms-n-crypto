@@ -17,13 +17,13 @@ def predict_is_crypto_related(tweet):
     result = check_keywords(input_text, crypto_keywords)
     
     if result == 1:
-        return 'is related to bitcoin' in tweet.lower()
+        return True
     else:
         result = predict(model, input_text)
         if result == 1:
-            return 'is related to bitcoin' in tweet.lower()
+            return True
         else:
-            return 'not related to bitcoin' in tweet.lower()
+            return False
         #print(f"Prediction for input '{input_text}': {result}")
     #return 'bitcoin' in tweet.lower()
 
