@@ -2,13 +2,13 @@
 
 ## Setup
 Install the required dependencies
-```
-pip install -r requirements.txt
+```bash
+$ pip install -r requirements.txt
 ```
 
 ## Use pre-trained models for classification 
 We have provided an example main.py that demonstrates how our models can classify tweets. The toy example program includes historical tweets from Elon Musk that had significant price impacts on cryptocurrency.
-```
+```bash
 $ python main.py
 ```
 
@@ -31,21 +31,21 @@ We used ChatGPT to label the dataset on if a tweet is crypto related.
 OPEN_AI_API_KEY=your-api-key
 ```
 2. Run the script to generate the labels.
-```
+```bash
 $ python process/crypto-relatedness-tagging.py
 ```
 A `data/tweets-from-influentials.csv` will be generated after.
 
 ### Tag price impact
-```
+```bash
 # Unzip the price data
-!unzip "data/btc-prices/*.zip" -d "data/btc-prices/"
+$ unzip "data/btc-prices/*.zip" -d "data/btc-prices/"
 ```
 The taggings script supports any csv data with a `Timestamp` column. 
 
-```
+```bash
 # tag data/elonmusk.csv and save to data/elon-tweets-with-price.csv
-python process/price-impact-tagging.py data/elonmusk.csv data/elon-tweets-with-price.csv 
+$ python process/price-impact-tagging.py data/elonmusk.csv data/elon-tweets-with-price.csv 
 ```
 
 ## Crypto Relatedness Classifier
